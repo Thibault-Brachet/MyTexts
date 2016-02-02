@@ -3,9 +3,6 @@ package tbrachet.my.texts.utils;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import org.springframework.web.bind.annotation.RestController;
-
-@RestController
 public class TextUtils {
 
 	/**
