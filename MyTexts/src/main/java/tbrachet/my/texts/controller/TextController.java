@@ -5,7 +5,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -22,8 +21,7 @@ import tbrachet.my.texts.utils.TextUtils;
 public class TextController {
 
 	@Autowired
-	TextServices textService; // Service which will do all data
-								// retrieval/manipulation work
+	TextServices textService; // Service which will do all data	retrieval/manipulation work
 
 	/**
 	 * Retrieves all texts
@@ -39,21 +37,6 @@ public class TextController {
 		}
 		return new ResponseEntity<List<Text>>(Texts, HttpStatus.OK);
 	}
-
-	// // -------------------Retrieve Single
-	// // Text--------------------------------------------------------
-	//
-	// @RequestMapping(value = "/text/{id}", method = RequestMethod.GET,
-	// produces = MediaType.APPLICATION_JSON_VALUE)
-	// public ResponseEntity<Text> getText(@PathVariable("id") long id) {
-	// System.out.println("Fetching Text with id " + id);
-	// Text Text = textService.getById(id);
-	// if (Text == null) {
-	// System.out.println("Text with id " + id + " not found");
-	// return new ResponseEntity<Text>(HttpStatus.NOT_FOUND);
-	// }
-	// return new ResponseEntity<Text>(Text, HttpStatus.OK);
-	// }
 
 	/**
 	 * Create a new Text

@@ -183,16 +183,16 @@ App.factory('TextService', ['$http', '$q', function($http, $q){
 
 
 					<div class="row">
-						<div class="form-group col-md-12">
+						<div class="form-group col-md-12 ">
 							<label class="col-md-2 control-lable" for="textContent">Text</label>
 							<div class="col-md-7">
-								<textarea ng-model="ctrl.text.text" name="text" id="textContent" class="form-control input-sm" placeholder="Write your text" ng-required ></textarea>
+								<textarea ng-model="ctrl.text.text" name="text" id="textContent" class="form-control" rows="10" placeholder="Write your text" ng-required ></textarea>
 							</div>
 						</div>
 					</div>
 
-					<div class="row">
-						<div class="form-actions floatRight">
+					<div >
+						<div class="form-actions text-center">
 							<input type="submit" value="{{!ctrl.text.id ? 'Add' : 'Update'}}" class="btn btn-primary btn-sm" ng-disabled="myForm.$invalid">
 							<button type="button" ng-click="ctrl.reset()" class="btn btn-warning btn-sm" ng-disabled="myForm.$pristine">Reset	Text</button>
 						</div>
