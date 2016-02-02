@@ -1,0 +1,3 @@
+INSERT INTO texts VALUES (1, 'EDIA', 'We specialise in education technology because we are passionate about education. We believe that access to education improves the quality of life for many. We think that learning and teaching on a web scale can be improved by using the right technologies. EDIA offers research, consultancy, development and maintenance of web-based education technology. We serve various types of organisations, such as universities, schools, publishers, libraries and corporations.', '');
+INSERT INTO texts VALUES (2, 'AIDE', 'If we know your why we can tell you ‘how’ before we make your what', '');
+INSERT INTO texts VALUES (3, 'IDEA', 'Intelligence uses what is known to solve problems. Creativity uses what is unknown to discover possibilities', ''	);
