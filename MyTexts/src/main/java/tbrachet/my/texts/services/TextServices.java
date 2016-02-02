@@ -1,55 +1,35 @@
 package tbrachet.my.texts.services;
 
-import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import tbrachet.my.texts.bean.Text;
+import tbrachet.my.texts.dao.ITextDao;
 
 @Service("textService")
-@Transactional
 public class TextServices implements ITextServices {
+	
+	@Autowired
+	private ITextDao dao;
 
 	public List<Text> getAllTexts() {
-		// TODO Connect with DAO when the database will be created 
-		List<Text> results = new ArrayList<Text>();
-		
-		Text text0 = new Text(0, "title0", "text0", "0");
-		Text text1 = new Text(1, "title1", "text1", "1");
-		Text text2 = new Text(2, "title2", "text2", "2");
-		Text text3 = new Text(3, "title3", "text3", "3");
-		
-		results.add(text0);
-		results.add(text1);
-		results.add(text2);
-		results.add(text3);
-		
-		return results;
+		return dao.findAllTexts();
 	}
 
 	public Text getById(long id) {
-		// TODO Connect with DAO when the database will be created 
-		Text text0 = new Text(0, "title0", "text0", "0");
-		
-		
-		return text0;
+		return dao.findById(id);
 	}
 
 	public void createText(Text createdText) {
-		// TODO Auto-generated method stub
+		dao.saveNewText(createdText);
 
 	}
 
 	public void updateText(Text updatedText) {
-		// TODO Auto-generated method stub
+		dao.saveExistingText(updatedText);
 
-	}
-
-	public String calculateScore(String text) {
-		// TODO Implement a method calculating a score (Flesch–Kincaid readability tests?)
-		return "5";
 	}
 
 }

@@ -172,7 +172,7 @@ App.factory('TextService', ['$http', '$q', function($http, $q){
 						<div class="form-group col-md-12">
 							<label class="col-md-2 control-lable" for="title">Title</label>
 							<div class="col-md-7">
-								<input type="text" ng-model="ctrl.text.title" id="title" class="form-control input-sm" placeholder="Enter title" required />
+								<input type="text" ng-model="ctrl.text.title" id="title" class="form-control input-sm" placeholder="Enter title" ng-required />
 								<div class="has-error" ng-show="myForm.$dirty">
 									<span ng-show="myForm.title.$error.required">This is a required field</span>
 									<span ng-show="myForm.title.$invalid">This field is invalid </span>
@@ -186,7 +186,7 @@ App.factory('TextService', ['$http', '$q', function($http, $q){
 						<div class="form-group col-md-12">
 							<label class="col-md-2 control-lable" for="textContent">Text</label>
 							<div class="col-md-7">
-								<input type="text" ng-model="ctrl.text.text" id="textContent" class="form-control input-sm" placeholder="Write your text" />
+								<textarea ng-model="ctrl.text.text" name="text" id="textContent" class="form-control input-sm" placeholder="Write your text" ng-required ></textarea>
 							</div>
 						</div>
 					</div>
@@ -210,18 +210,14 @@ App.factory('TextService', ['$http', '$q', function($http, $q){
 					<thead>
 						<tr>
 							<th>Title</th>
-							<th>Text</th>
-							<th width="20%"></th>
+							<th>Score</th>
 						</tr>
 					</thead>
 					<tbody>
 						<tr ng-repeat="t in ctrl.texts">
 							<input type="hidden" ng-model="t.id" />
-							<td><span ng-bind="t.title"></span></td>
-							<td><span ng-bind="t.text"></span></td>
-							<td>
-								<button type="button" ng-click="ctrl.edit(t.id)" class="btn btn-success custom-width">Edit</button>
-							</td>
+							<td><a href="" ng-click="ctrl.edit(t.id)"><span ng-bind="t.title" ></span></a></td>
+							<td><span ng-bind="t.score"></span></td>
 						</tr>
 					</tbody>
 				</table>

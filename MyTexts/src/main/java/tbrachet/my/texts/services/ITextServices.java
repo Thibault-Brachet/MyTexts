@@ -11,6 +11,5 @@ public interface ITextServices {
 	Text getById(long id);
 	void createText(Text createdText);
 	void updateText(Text updatedText);
-	String calculateScore(String text);
 
 }
