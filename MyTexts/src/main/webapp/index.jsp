@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html>
 <html>
 <head>
 
@@ -153,8 +154,10 @@ App.factory('TextService', ['$http', '$q', function($http, $q){
 }]);
 
 </script>
-<!-- <script type="text/javascript" src="./static/js/service/text_service.js"></script> -->
-<!-- <script type="text/javascript" src="./static/js/controller/text_controller.js"></script> -->
+<!-- For an unknown reason, my external scripts are not loading at all, that is why I had to include my JS code on this page... -->
+<!-- <script type="text/javascript" src="<%=request.getContextPath()%>/static/js/app.js"></script> -->
+<!-- <script type="text/javascript" src="<%=request.getContextPath()%>/static/js/service/text_service.js"></script> -->
+<!-- <script type="text/javascript" src="<%=request.getContextPath()%>/static/js/controller/text_controller.js"></script> -->
 </head>
 <body ng-app="myApp" class="ng-cloak">
 
@@ -162,7 +165,7 @@ App.factory('TextService', ['$http', '$q', function($http, $q){
 
 		<div class="panel panel-default">
 			<div class="panel-heading">
-				<span class="lead">Text Form </span>
+				<span class="lead">Edit Text</span>
 			</div>
 			<div class="formcontainer">
 				<form ng-submit="ctrl.submit()" name="myForm"
